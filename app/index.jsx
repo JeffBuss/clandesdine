@@ -6,8 +6,8 @@ import { createStore, applyMiddleware } from 'redux';
 import rootReducer from './reducers/index';
 import App from './components/app/App';
 
-import './styles';
-import './reset';
+import './styles.scss';
+import './reset.scss';
 
 const devTools = window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__();
 
