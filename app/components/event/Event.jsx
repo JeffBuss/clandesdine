@@ -33,12 +33,3 @@ class Event extends Component {
 }
 
 export default firebase()(Event)
-// const Event = (props) => {
-//   return (
-//     <div>
-//       This is the event component
-//     </div>
-//   );
-// };
-//
-// export default Event;
