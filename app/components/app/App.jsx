@@ -1,9 +1,10 @@
 import React, { Component, PropTypes } from 'react';
-import Event from '../event/Event';
-
 import { connect } from 'react-redux';
 import { firebase, helpers } from 'react-redux-firebase';
 const { isLoaded, isEmpty, pathToJS, dataToJS } = helpers
+
+import CircularProgress from 'material-ui/CircularProgress';
+import Event from '../event/Event';
 
 class App extends Component {
   static propTypes = {
@@ -20,7 +21,7 @@ class App extends Component {
       newEvent.value = ''
     }
     const eventList = (!isLoaded(events))
-      ? 'Loading'
+      ? <CircularProgress />
       : (isEmpty(events))
         ? 'Event list is empty'
         : Object.keys(events).map((key) => (

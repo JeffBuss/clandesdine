@@ -1,5 +1,6 @@
 const { resolve } = require('path');
 const webpack = require('webpack');
+const DashboardPlugin = require('webpack-dashboard/plugin');
 
 module.exports = {
   devtool: 'inline-source-map',
@@ -25,8 +26,10 @@ module.exports = {
     contentBase: './build',
     inline: true,
   },
-
   resolve: {
     extensions: ['*', '.js', '.json', '.jsx', '.css', '.scss'],
   },
+  plugins: [
+    new DashboardPlugin()
+  ],
 };
