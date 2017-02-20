@@ -16,14 +16,14 @@ class App extends Component {
     const { firebase, events } = this.props
     const handleAdd = () => {
       const { newEvent } = this.refs
-      firebase.push('/events', { text: newEvent, done: false })
+      firebase.push('/events', { text: newEvent.value, attend: false })
       newEvent.value = ''
     }
     const eventList = (!isLoaded(events))
       ? 'Loading'
       : (isEmpty(events))
         ? 'Event list is empty'
-        : Object.keys(todos).map((key) => (
+        : Object.keys(events).map((key) => (
           <Event key={key} id={key} event={events[key]} />
         ))
 

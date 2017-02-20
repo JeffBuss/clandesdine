@@ -1,8 +1,8 @@
-const inviteReducer = (state = null, action) => {
-  switch (action.type) {
-    default:
-      return state;
-  }
-};
-
-export default inviteReducer;
+// const inviteReducer = (state = null, action) => {
+//   switch (action.type) {
+//     default:
+//       return state;
+//   }
+// };
+//
+// export default inviteReducer;
