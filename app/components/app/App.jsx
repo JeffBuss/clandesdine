@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
+import Event from '../event/Event';
 
 class App extends Component {
   render() {
     return (
       <div>
-        This is the app component
+        <div>This is the app component</div>
+        <Event />
       </div>
     );
   }
