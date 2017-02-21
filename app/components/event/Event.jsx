@@ -17,7 +17,10 @@ class Event extends Component {
     return(
       <li>
         {event.title}<br/>
-        {event.host}
+        {event.host}<br/>
+        {event.date}<br/>
+        {event.time}<br/>
+        {event.menu}<br/>
         <button onClick={deleteEvent}>Delete</button>
       </li>
     )

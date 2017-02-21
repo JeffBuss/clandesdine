@@ -12,9 +12,13 @@ class NewEvent extends Component {
       const {
         newEventTitle,
         newEventHost,
+        newEventLocation,
+        newEventDate,
+        newEventTime,
+        newEventMenu,
       } = this.refs
-      const { title, host } = this.state
-      this.props.onNewClick({ title, host })
+      const { title, host, location, date, time, menu } = this.state
+      this.props.onNewClick({ title, host, location, date, time, menu })
       newEventTitle.value = ''
     }
 
@@ -29,7 +33,27 @@ class NewEvent extends Component {
           floatingLabelText='Host'
           ref='newEventHost'
           onChange={({ target }) => { this.setState({ host: target.value }) }}
-        />
+        /><br/>
+        <TextField
+          floatingLabelText='Location'
+          ref='newEventLocation'
+          onChange={({ target }) => { this.setState({ location: target.value }) }}
+        /><br/>
+        <TextField
+          floatingLabelText='Date'
+          ref='newEventDate'
+          onChange={({ target }) => { this.setState({ date: target.value }) }}
+        /><br/>
+        <TextField
+          floatingLabelText='Time'
+          ref='newEventTime'
+          onChange={({ target }) => { this.setState({ time: target.value }) }}
+        /><br/>
+        <TextField
+          floatingLabelText='Menu'
+          ref='newEventMenu'
+          onChange={({ target }) => { this.setState({ menu: target.value }) }}
+        /><br/>
         <button
           onClick={handleAdd}
         >Add Event</button>
