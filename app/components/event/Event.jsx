@@ -1,5 +1,7 @@
 import React, { PropTypes, Component } from 'react';
 import { firebase } from 'react-redux-firebase';
+import {Card, CardActions, CardHeader, CardMedia, CardTitle, CardText} from 'material-ui/Card';
+import FlatButton from 'material-ui/FlatButton';
 
 class Event extends Component {
   static propTypes = {
@@ -15,14 +17,19 @@ class Event extends Component {
     }
 
     return(
-      <li>
-        {event.title}<br/>
-        {event.host}<br/>
-        {event.date}<br/>
-        {event.time}<br/>
-        {event.menu}<br/>
-        <button onClick={deleteEvent}>Delete</button>
-      </li>
+      <Card>
+        <CardTitle>{event.title}</CardTitle>
+        <br/>
+        <CardText>
+          {event.host}<br/>
+          {event.date}<br/>
+          {event.time}<br/>
+          {event.menu}<br/>
+        </CardText>
+        <CardActions>
+          <FlatButton onClick={deleteEvent}>Delete</FlatButton>
+        </CardActions>
+      </Card>
     )
   }
 }
