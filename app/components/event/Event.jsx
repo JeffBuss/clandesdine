@@ -10,21 +10,12 @@ class Event extends Component {
   render() {
     const { firebase, event, id } = this.props
 
-    const toggleAttend = () => {
-      firebase.set(`/events/${id}/attend`, !event.attend)
-    }
-
     const deleteEvent = (e) => {
       firebase.remove(`/events/${id}`)
     }
 
     return(
       <li>
-        <input
-          type='checkbox'
-          checked={event.attend}
-          onChange={toggleAttend}
-        />
         {event.text}
         <button onClick={deleteEvent}>Delete</button>
       </li>
