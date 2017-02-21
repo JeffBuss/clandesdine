@@ -1,25 +1,34 @@
 import React, { Component } from 'react';
-import { Router, Route, IndexRoute, browserHistory } from 'react-router';
 import ReactDOM from 'react-dom';
+import { Router, Route, IndexRoute, browserHistory } from 'react-router';
 import { Provider } from 'react-redux';
-import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import injectTapEventPlugin from 'react-tap-event-plugin';
+import configureStore from './store/store';
 
-import App from './components/app/App';
-import store from './store/store';
+import About from './containers/About/About';
+import App from './containers/App/App';
+import Contact from './containers/Contact/Contact';
+import Home from './containers/Home/Home';
+import Login from './containers/Login/Login';
+import Media from './containers/Media/Media';
+import Signup from './containers/Signup/Signup';
 
-import './reset.scss';
-import './styles.scss';
+const initialState = window.__INITIAL_STATE__ || { firebase: { authError: null } };
 
-const router = (
-  <MuiThemeProvider>
-    <Provider store={store}>
-      <Router history={browserHistory}>
-        <Route path="/" component={App}>
-        </Route>
-      </Router>
-    </Provider>
-  </MuiThemeProvider>
+const store = configureStore(initialState, browserHistory);
+
+let main = document.getElementById('main');
+
+ReactDOM.render(
+  <Provider store={store}>
+    <Router history={browserHistory}>
+      <Route path="/" component={App}>
+        <IndexRoute component={Home} />
+        <Route path="/about" component={About} />
+        <Route path="/contact" component={Contact} />
+        <Route path="login" component={Login} />
+        <Route path="/media" component={Media} />
+        <Route path="signup" component={Signup} />
+      </Route>
+    </Router>
+  </Provider>, main,
 );
-
-ReactDOM.render(router, document.getElementById('main'));

@@ -13,10 +13,10 @@ export default function (history, store) {
     <Router history={history}>
       <Route path="/" component={App}>
         <IndexRoute component={Home} />
-        <Route path="about" component={About} />
-        <Route path="contact" component={Contact} />
+        <Route path="/about" component={About} />
+        <Route path="/contact" component={Contact} />
         <Route path="login" component={Login} />
-        <Route path="media" component={Media} />
+        <Route path="/media" component={Media} />
         <Route path="signup" component={Signup} />
       </Route>
     </Router>
