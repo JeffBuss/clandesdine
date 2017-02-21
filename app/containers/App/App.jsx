@@ -8,7 +8,6 @@ import injectTapEventPlugin from 'react-tap-event-plugin';
 
 injectTapEventPlugin();
 
-
 export default class App extends Component {
   static childContextTypes = {
     muiTheme: PropTypes.object,
