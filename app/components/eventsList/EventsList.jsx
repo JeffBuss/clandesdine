@@ -32,7 +32,7 @@ class EventsList extends Component {
       <div>
         <h1>Events</h1>
         {eventList}
-        <h2>New Event</h2>
+        <h2>Add New Event</h2>
         <NewEvent onNewClick={handleAdd}/>
       </div>
     )

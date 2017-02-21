@@ -5,6 +5,7 @@ import Theme from '../../theme'
 
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import injectTapEventPlugin from 'react-tap-event-plugin';
+import './App.scss';
 
 injectTapEventPlugin();
 
@@ -30,7 +31,7 @@ export default class App extends Component {
 
   render() {
     return (
-      <div>
+      <div className='App'>
         <Navbar router={this.context.router}/>
         {this.props.children}
       </div>
