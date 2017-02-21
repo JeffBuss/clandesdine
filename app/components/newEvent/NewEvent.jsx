@@ -1,6 +1,9 @@
 import React, { Component, PropTypes } from 'react';
 import { firebase } from 'react-redux-firebase';
+
 import TextField from 'material-ui/TextField';
+import FloatingActionButton from 'material-ui/FloatingActionButton';
+import ContentAdd from 'material-ui/svg-icons/content/add';
 
 class NewEvent extends Component {
   static propTypes = {
@@ -54,9 +57,10 @@ class NewEvent extends Component {
           ref='newEventMenu'
           onChange={({ target }) => { this.setState({ menu: target.value }) }}
         /><br/>
-        <button
-          onClick={handleAdd}
-        >Add Event</button>
+        <FloatingActionButton
+          onClick={handleAdd}>
+          <ContentAdd />
+        </FloatingActionButton>
       </div>
     )
   }
