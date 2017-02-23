@@ -11,6 +11,8 @@ const buttonStyle = { color: 'white' };
 
 export default class Navbar extends Component {
   render() {
+    const { router } = this.props
+
     return (
       <AppBar
         title={
@@ -24,10 +26,22 @@ export default class Navbar extends Component {
             anchorOrigin={{ horizontal: 'left', vertical: 'top' }}
             targetOrigin={{ horizontal: 'left', vertical: 'top' }}
           >
-            <MenuItem primaryText="About" />
-            <MenuItem primaryText="Media" />
-            <MenuItem primaryText="FAQs" />
-            <MenuItem primaryText="Contact" />
+            <MenuItem
+              primaryText="About"
+              onClick={() => router.push('/about')}
+            />
+            <MenuItem
+              primaryText="Media"
+              onClick={() => router.push('/media')}
+            />
+            <MenuItem
+              primaryText="FAQs"
+              onClick={() => router.push('/faqs')}
+            />
+            <MenuItem
+              primaryText="Contact"
+              onClick={() => router.push('/contact')}
+            />
           </IconMenu>}
       />
     );
