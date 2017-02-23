@@ -2,15 +2,26 @@ import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 import { firebase, helpers } from 'react-redux-firebase';
 
-import CircularProgress from 'material-ui/CircularProgress';
-import injectTapEventPlugin from 'react-tap-event-plugin';
-
+import Login from '../Login/Login';
 import EventsList from '../../components/eventsList/EventsList';
 
+const { pathToJS, dataToJS } = helpers;
+
 class App extends Component {
-  render () {
+
+  static propTypes = {
+    profile: PropTypes.object,
+  }
+
+  render() {
     return (
-      <EventsList />
+      <div>
+        {
+          this.props.profile === null
+          ?<Login />
+          :<EventsList />
+        }
+      </div>
     )
   }
 }

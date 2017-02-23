@@ -30,6 +30,6 @@ module.exports = {
     extensions: ['*', '.js', '.json', '.jsx', '.css', '.scss'],
   },
   plugins: [
-    new DashboardPlugin()
+    new DashboardPlugin(),
   ],
 };
