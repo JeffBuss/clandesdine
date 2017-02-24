@@ -5,60 +5,43 @@ import TextField from 'material-ui/TextField';
 import FloatingActionButton from 'material-ui/FloatingActionButton';
 import ContentAdd from 'material-ui/svg-icons/content/add';
 
-class Contact extends Component {
+class ContactForm extends Component {
   static propTypes = {
-    onNewClick: PropTypes.func,
+    onContactClick: PropTypes.func,
   }
 
   render() {
-    const handleAdd = () => {
+    const handleContact = () => {
       const {
-        newEventTitle,
-        newEventHost,
-        newEventLocation,
-        newEventDate,
-        newEventTime,
-        newEventMenu,
+        contactName,
+        contactEmail,
+        contactBody,
       } = this.refs
-      const { title, host, location, date, time, menu } = this.state
-      this.props.onNewClick({ title, host, location, date, time, menu })
-      newEventTitle.value = ''
+      const { name, email, body } = this.state
+      this.props.onContactClick({ name, email, body })
     }
 
     return(
       <div>
         <TextField
-          floatingLabelText='Event Name'
-          ref='newEventTitle'
-          onChange={({ target }) => { this.setState({ title: target.value }) }}
+          floatingLabelText='Name'
+          ref='contactName'
+          onChange={({ target }) => { this.setState({ name: target.value }) }}
         /><br/>
         <TextField
-          floatingLabelText='Host'
-          ref='newEventHost'
-          onChange={({ target }) => { this.setState({ host: target.value }) }}
+          floatingLabelText='E-Mail'
+          ref='contactEmail'
+          onChange={({ target }) => { this.setState({ email: target.value }) }}
         /><br/>
         <TextField
-          floatingLabelText='Location'
-          ref='newEventLocation'
-          onChange={({ target }) => { this.setState({ location: target.value }) }}
-        /><br/>
-        <TextField
-          floatingLabelText='Date'
-          ref='newEventDate'
-          onChange={({ target }) => { this.setState({ date: target.value }) }}
-        /><br/>
-        <TextField
-          floatingLabelText='Time'
-          ref='newEventTime'
-          onChange={({ target }) => { this.setState({ time: target.value }) }}
-        /><br/>
-        <TextField
-          floatingLabelText='Menu'
-          ref='newEventMenu'
-          onChange={({ target }) => { this.setState({ menu: target.value }) }}
+          floatingLabelText='Tell us all about it'
+          ref='contactBody'
+          onChange={({ target }) => { this.setState({ body: target.value }) }}
+          multiLine={true}
+          rows={4}
         /><br/>
         <FloatingActionButton
-          onClick={handleAdd}>
+          onClick={handleContact}>
           <ContentAdd />
         </FloatingActionButton>
       </div>
@@ -66,4 +49,4 @@ class Contact extends Component {
   }
 }
 
-export default firebase()(Contact)
+export default firebase()(ContactForm)
