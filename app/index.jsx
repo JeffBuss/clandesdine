@@ -7,6 +7,7 @@ import configureStore from './store/store';
 import About from './containers/About/About';
 import App from './containers/App/App';
 import Contact from './containers/Contact/Contact';
+import Faqs from './containers/Faqs/Faqs';
 import Home from './containers/Home/Home';
 import Login from './containers/Login/Login';
 import Media from './containers/Media/Media';
@@ -26,6 +27,7 @@ ReactDOM.render(
         <Route path="/about" component={About} />
         <Route path="/contact" component={Contact} />
         <Route path="/login" component={Login} />
+        <Route path="/faqs" component={Faqs} />
         <Route path="/media" component={Media} />
         <Route path="/signup" component={Signup} />
       </Route>
