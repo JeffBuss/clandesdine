@@ -17,7 +17,7 @@ class App extends Component {
     return (
       <div>
         {
-          this.props.profile === null
+          this.props.profile === null || !this.props.profile
           ?<Login />
           :<EventsList />
         }
@@ -26,4 +26,12 @@ class App extends Component {
   }
 }
 
-export default App;
+const fbWrappedComponent = firebase([
+  '/app'
+])(App)
+
+export default connect(
+  ({firebase}) => ({
+    profile: pathToJS(firebase, 'profile'),
+  })
+)(fbWrappedComponent)
