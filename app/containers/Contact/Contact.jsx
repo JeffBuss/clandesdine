@@ -31,6 +31,6 @@ const fbWrappedComponent = firebase([
 
 export default connect(
   ({firebase}) => ({
-    contact: dataToJS(firebase, 'events'),
+    contact: dataToJS(firebase, 'contact'),
   })
 )(fbWrappedComponent)

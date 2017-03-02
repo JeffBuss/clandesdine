@@ -8,16 +8,6 @@ import CircularProgress from 'material-ui/CircularProgress';
 import Event from '../event/Event';
 import NewEvent from '../newEvent/NewEvent';
 
-// @firebaseConnect([
-//   '/events'
-// ])
-// @connect(
-//   ({firebase}) => ({
-//     events: dataToJS(firebase, 'events'),
-//     profile: pathToJS(firebase, 'profile')
-//   })
-// )
-
 class EventsList extends Component {
   static propTypes = {
     events: PropTypes.object,
