@@ -2,8 +2,10 @@ import React, { Component, PropTypes } from 'react';
 import { connect } from 'react-redux';
 import { firebase, helpers } from 'react-redux-firebase';
 const { isLoaded, isEmpty, pathToJS, dataToJS } = helpers
+import { Link } from 'react-router';
 
 import CircularProgress from 'material-ui/CircularProgress';
+import FlatButton from 'material-ui/FlatButton';
 
 import Event from '../event/Event';
 import NewEvent from '../newEvent/NewEvent';
@@ -16,10 +18,7 @@ class EventsList extends Component {
     })
   }
   render () {
-    const { firebase, events } = this.props
-    const handleAdd = (newEvent) => {
-      firebase.push('/events', newEvent)
-    }
+    const { firebase, events, router } = this.props
     const eventList = (!isLoaded(events))
       ? <CircularProgress />
       : (isEmpty(events))
@@ -33,7 +32,9 @@ class EventsList extends Component {
         <h1>Events</h1>
         {eventList}
         <h2>Add New Event</h2>
-        <NewEvent onNewClick={handleAdd}/>
+        <FlatButton
+          ><Link to='/newevent'>Add a new event</Link>
+        </FlatButton>
       </div>
     )
   }

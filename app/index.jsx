@@ -7,6 +7,7 @@ import configureStore from './store/store';
 import About from './containers/About/About';
 import App from './containers/App/App';
 import Contact from './containers/Contact/Contact';
+import CreateEvent from './containers/CreateEvent/CreateEvent';
 import Faqs from './containers/Faqs/Faqs';
 import Home from './containers/Home/Home';
 import Login from './containers/Login/Login';
@@ -29,6 +30,7 @@ ReactDOM.render(
         <Route path="/login" component={Login} />
         <Route path="/faqs" component={Faqs} />
         <Route path="/media" component={Media} />
+        <Route path="/newevent" component={CreateEvent} />
         <Route path="/signup" component={Signup} />
       </Route>
     </Router>
