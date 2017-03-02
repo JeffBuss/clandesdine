@@ -31,7 +31,6 @@ class EventsList extends Component {
       <div>
         <h1>Events</h1>
         {eventList}
-        <h2>Add New Event</h2>
         <FlatButton
           ><Link to='/newevent'>Add a new event</Link>
         </FlatButton>

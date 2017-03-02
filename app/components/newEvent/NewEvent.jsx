@@ -1,5 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import { firebase } from 'react-redux-firebase';
+import { Link } from 'react-router';
 
 import TextField from 'material-ui/TextField';
 import FloatingActionButton from 'material-ui/FloatingActionButton';
@@ -59,7 +60,7 @@ class NewEvent extends Component {
         /><br/>
         <FloatingActionButton
           onClick={handleAdd}>
-          <ContentAdd />
+          <Link to='/'><ContentAdd /></Link>
         </FloatingActionButton>
       </div>
     )
