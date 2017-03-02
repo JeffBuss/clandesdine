@@ -20,7 +20,6 @@ class Login extends Component {
   }
 
   providerLogin = (provider) => {
-    this.setState({ snackCanOpen: true })
     this.props.firebase.login({ provider, type: 'redirect' })
   }
 
