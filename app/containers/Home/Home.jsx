@@ -5,6 +5,8 @@ import { firebase, helpers } from 'react-redux-firebase';
 import Login from '../Login/Login';
 import EventsList from '../../components/eventsList/EventsList';
 
+import './Home.scss';
+
 const { pathToJS, dataToJS } = helpers;
 
 class App extends Component {
@@ -15,7 +17,7 @@ class App extends Component {
 
   render() {
     return (
-      <div>
+      <div className="home-container">
         {
           this.props.profile === null || !this.props.profile
           ?<Login />

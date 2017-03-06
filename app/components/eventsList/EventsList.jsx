@@ -10,6 +10,8 @@ import FlatButton from 'material-ui/FlatButton';
 import Event from '../event/Event';
 import NewEvent from '../newEvent/NewEvent';
 
+import './eventsList.scss';
+
 class EventsList extends Component {
   static propTypes = {
     events: PropTypes.object,
@@ -24,14 +26,14 @@ class EventsList extends Component {
       : (isEmpty(events))
         ? 'There are no upcoming events'
         : Object.keys(events).map((key) => (
-          <Event key={key} id={key} event={events[key]} />
+          <Event className="events-list" key={key} id={key} event={events[key]} />
         ))
 
     return (
       <div>
-        <h1>Events</h1>
-        {eventList}
-        <FlatButton
+        <h1 className="events-header">Events</h1>
+        <div className="events-list">{eventList}</div>
+        <FlatButton className="add-event-btn"
           ><Link to='/newevent'>Add a new event</Link>
         </FlatButton>
       </div>
