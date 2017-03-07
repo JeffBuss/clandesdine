@@ -28,6 +28,7 @@ class Navbar extends Component {
     const userMenu = profile ? (
       <div className='Navbar-Main-Menu'>
         <FlatButton
+          className='sign-out-btn'
           label='Sign Out'
           style={buttonStyle}
           onClick={() => this.props.firebase.logout()}
@@ -48,23 +49,28 @@ class Navbar extends Component {
         }
         iconElementLeft={
           <IconMenu
+            className="menu-dropdown"
             iconButtonElement={<IconButton><MoreVertIcon /></IconButton>}
             anchorOrigin={{ horizontal: 'left', vertical: 'top' }}
             targetOrigin={{ horizontal: 'left', vertical: 'top' }}
           >
             <MenuItem
+              className="about-dropdown"
               primaryText="About"
               onClick={() => router.push('/about')}
             />
             <MenuItem
+              className="media-dropdown"
               primaryText="Media"
               onClick={() => router.push('/media')}
             />
             <MenuItem
+              className="faqs-dropdown"
               primaryText="FAQs"
               onClick={() => router.push('/faqs')}
             />
             <MenuItem
+              className="contact-dropdown"
               primaryText="Contact"
               onClick={() => router.push('/contact')}
             />

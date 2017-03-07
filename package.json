@@ -6,7 +6,7 @@
   "scripts": {
     "start": "webpack-dashboard -- webpack-dev-server --hot --content-base",
     "build": "webpack",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -22,6 +22,7 @@
   "devDependencies": {
     "babel": "^6.23.0",
     "babel-core": "^6.23.1",
+    "babel-jest": "^19.0.0",
     "babel-loader": "^6.3.2",
     "babel-plugin-transform-class-properties": "^6.23.0",
     "babel-plugin-transform-decorators": "^6.22.0",
@@ -39,11 +40,14 @@
     "eslint-plugin-import": "^2.2.0",
     "eslint-plugin-jsx-a11y": "^4.0.0",
     "eslint-plugin-react": "^6.10.0",
+    "jasmine": "^2.5.3",
+    "jest": "^19.0.2",
     "jsdom": "^9.11.0",
     "mocha": "^3.2.0",
     "node-libs-browser": "^2.0.0",
     "node-sass": "^4.5.0",
     "react-addons-test-utils": "^15.4.2",
+    "redux-mock-store": "^1.2.2",
     "webpack": "^2.2.1",
     "webpack-dashboard": "^0.3.0",
     "webpack-dev-server": "^2.3.0"
