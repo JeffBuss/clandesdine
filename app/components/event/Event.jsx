@@ -30,7 +30,9 @@ class Event extends Component {
             {event.menu}<br/>
           </CardText>
           <CardActions>
-            <FlatButton onClick={deleteEvent}>Delete</FlatButton>
+            <FlatButton
+              className="delete-event-btn"
+              onClick={deleteEvent}>Delete</FlatButton>
           </CardActions>
         </Card>
       </div>

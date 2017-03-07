@@ -9,7 +9,7 @@ import './Home.scss';
 
 const { pathToJS, dataToJS } = helpers;
 
-class App extends Component {
+class Home extends Component {
 
   static propTypes = {
     profile: PropTypes.object,
@@ -29,8 +29,8 @@ class App extends Component {
 }
 
 const fbWrappedComponent = firebase([
-  '/app'
-])(App)
+  '/home'
+])(Home)
 
 export default connect(
   ({firebase}) => ({

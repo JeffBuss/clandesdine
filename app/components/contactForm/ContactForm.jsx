@@ -41,6 +41,7 @@ class ContactForm extends Component {
           rows={4}
         /><br/>
         <FloatingActionButton
+          className="contact-btn"
           onClick={handleContact}>
           <ContentAdd />
         </FloatingActionButton>

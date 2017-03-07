@@ -33,7 +33,7 @@ describe('Navbar', () => {
   });
 
   it('should display sign out button if user is signed in', () => {
-    const { Component } = setup({ profile: 'turbocapslock@gmail.com' });
+    const { Component } = setup({ profile: 'fakeprofile' });
     const signOut = Component.find('.sign-out-btn');
     expect(signOut.length).toEqual(1);
   });

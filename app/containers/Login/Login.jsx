@@ -25,8 +25,8 @@ class Login extends Component {
 
   render() {
     return (
-      <div className='Login'>
-        <div className='Login-Providers'>
+      <div className='login'>
+        <div className='login-Providers'>
           <GoogleButton onClick={() => this.providerLogin('google')} />
         </div>
       </div>

@@ -20,7 +20,9 @@ class CreateEvent extends Component {
     return (
       <div>
         <h2>Add New Event</h2>
-        <NewEvent onNewClick={handleAdd}/>
+        <NewEvent
+          className="new-event-button"
+          onNewClick={handleAdd}/>
       </div>
     )
   }
