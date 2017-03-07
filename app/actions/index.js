@@ -11,3 +11,10 @@ export const handleAdd = (newEvent) => {
     newEvent,
   };
 };
+
+export const deleteEvent = (event) => {
+  return {
+    type: 'DELETE_EVENT',
+    event,
+  };
+};
