@@ -44,3 +44,5 @@ describe('Home', () => {
     expect(eventsList.length).toEqual(1);
   });
 });
+
+// comment files for instructor review

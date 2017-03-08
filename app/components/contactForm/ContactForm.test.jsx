@@ -41,3 +41,5 @@ describe('ContactForm', () => {
     expect(props.onContactClick).toBeCalled();
   });
 });
+
+// comment files for instructor review
