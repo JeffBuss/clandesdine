@@ -5,7 +5,7 @@ import Navbar from './Navbar';
 import { assert, expect } from 'chai';
 import { Provider } from 'react-redux';
 
-const fakeStore = configureMockStore()({})
+const fakeStore = configureMockStore()({});
 
 const setup = (profile = null) => {
   const props = {
