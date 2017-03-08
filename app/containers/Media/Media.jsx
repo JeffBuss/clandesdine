@@ -19,7 +19,7 @@ class Media extends Component {
   render() {
     return (
       <div className="photo-grid">
-        <ReactRpg imagesArray={images} columns={[ 1, 3, 5 ]} padding={10} />
+        <ReactRpg imagesArray={images} columns={ [ 1, 3, 5 ] } padding={10} />
       </div>
     );
   }
