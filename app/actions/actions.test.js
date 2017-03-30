@@ -28,3 +28,5 @@ describe('actions', () => {
     expect(actions.deleteEvent(event)).toEqual(deleteAnEvent);
   });
 });
+
+// comment files for instructor review
